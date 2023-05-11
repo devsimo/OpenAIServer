@@ -36,17 +36,17 @@ function logAPICalls(req, res, next) {
 
         const logDataString = JSON.stringify(logData);
 
-        console.log('API Response:', logDataString);
+        console.log(logDataString);
 
         const year = responseDate.getFullYear();
         const month = (responseDate.getMonth() + 1).toString().padStart(2, '0');
         const day = responseDate.getDate().toString().padStart(2, '0');
 
-        fs.appendFile(`logs/${year}${month}${day}.log`, logDataString + '\n', (err) => {
+        /*fs.appendFile(`logs/${year}${month}${day}.log`, logDataString + '\n', (err) => {
             if (err) {
                 console.error(err);
             }
-        });
+        });*/
     });
 
     next();
