@@ -71,7 +71,7 @@ app.post('/', async(req, res) =>{
         const language = req.body.language;
 
         const response = await openai.createChatCompletion({
-            model: "gpt-3.5-turbo",
+            model: "gpt-3.5-turbo-0125",
             messages: [{ role: "user", content: prompt, language: language }],
             max_tokens: 1900
             });
