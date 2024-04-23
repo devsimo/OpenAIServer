@@ -68,10 +68,11 @@ app.get('/', async(req, res) =>{
 app.post('/', async(req, res) =>{
     try{
         const prompt = req.body.prompt;
+        const language = req.body.language;
 
         const response = await openai.createChatCompletion({
             model: "gpt-3.5-turbo",
-            messages: [{ role: "user", content: prompt }],
+            messages: [{ role: "user", content: prompt, language: language }],
             max_tokens: 1900
             });
 
